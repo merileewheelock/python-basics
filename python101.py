@@ -74,7 +74,7 @@
 # else:
 # 	print "You are underage."
 
-
+#Random number generator
 import random
 random_number = random.randint(1,10)
 # print random_number
