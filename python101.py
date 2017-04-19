@@ -43,6 +43,8 @@
 # print type(pi_the_magic_float)
 # make_me_an_integer = int(pi_the_magic_float)
 # print make_me_an_integer
+# int() to make an integer
+# str() to make a string
 
 #Booleans - true or false
 #True and False are uppercase
@@ -52,20 +54,35 @@
 # print type(the_lie)
 
 # Raw Input
-first_name = raw_input("First Name: ")
-last_name = raw_input("Last Name: ")
-#Whatever the user enters will be assigned to first_name
+# first_name = raw_input("First Name: ")
+# last_name = raw_input("Last Name: ")
+# #Whatever the user enters will be assigned to first_name
 
-#Conditionals
-# 1 = means you want to assign something
-# 2 == means you want to compare the thing on the left to the thing on the right
+# #Conditionals
+# # 1 = means you want to assign something
+# # 2 == means you want to compare the thing on the left to the thing on the right
 
-if (first_name == last_name):
-	print "Your first name is the same as your last name?"
+# if (first_name == last_name):
+# 	print "Your first name is the same as your last name?"
 
-#If you want to compare = or greater than, >=
-age  = raw_input("How old are you? ") #Raw input comes back as a string
-age_as_int = int(age)
-#print type(age) Comes back as a string
-if (age >= 21):
-	print "You can buy beer"
+# #If you want to compare = or greater than, >=
+# age  = raw_input("How old are you? ") #Raw input comes back as a string
+# age_as_int = int(age)
+# #print type(age) Comes back as a string
+# if (age_as_int >= 21):
+# 	print "You can buy beer!"
+# else:
+# 	print "You are underage."
+
+
+import random
+random_number = random.randint(1,10)
+# print random_number
+
+#Loop - keep doing something until I tell you to stop
+not_guessed = True
+while not_guessed:
+	guess_a_number = raw_input("Guess a number between 1 and 10. ")
+	if (int(guess_a_number) == random_number):
+		print "You guessed the number!"
+		not_guessed = False
