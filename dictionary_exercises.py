@@ -22,6 +22,8 @@ phonebook_dict['Bob'] = '968-345-2345'
 #5
 print phonebook_dict
 
+#Using fixed keys
+
 
 #Exercise 2
 
@@ -55,10 +57,12 @@ print ramit['friends'][0]['email']
 #4
 print ramit['friends'][1]['interests'][1]
 
+#Using fixed keys
+
 
 #Letter Summary
 def letter_histogram(word):
-	alpha = {}
+	alpha = {} #dict() will also create an empty dictionary
 	count_num = 1
 	for letter in word:
 		if letter in alpha.keys():
@@ -81,7 +85,7 @@ def word_histogram(paragraph):
 		else:
 			word_list[word] = count_num_word
 	print word_list
-word_histogram("This is a paragraph that I am writing to test thing thing.")
+word_histogram("This is a paragraph that I am writing to test this thing.")
 
 
 #Bonus: Max 3 Letters
@@ -95,15 +99,40 @@ def letter_histogram(word):
 			alpha[letter] = count_num
 
 	return alpha
-alpha_out = letter_histogram("Hello")
-print alpha_out
 
-sorted_alpha = [(let,num) for num,let in sorted(
-	[(num,let) for let,num in alpha_out.items()], reverse=True
-	)
-]
+# #CHAD'S WAY:
+# user_word = raw_input("Please enter a paragraph. ")
+# alpha = letter_histogram(user_word)
+# this_list = []
+# for key, key[histo] in alpha:
+# 	this_list.append([key, key[histo]])
+# this_list.sort(key = lambda x: x[1]) #sort based on the 1th element (the value)
+# print this_list[-1]
+# print this_list[-2]
+# print this_list[-3]
 
-print sorted_alpha[0:3]
+#YINGRONG'S WAY
+a_list = []
+max_key = ""
+new_dict = {}
+while len(new_dict.keys() <=2):
+	max_number = 0
+	for i in alpha:
+		if alpha[i] > max_number:
+			max_number = alpha[i]
+			max_key = i
+	del alpha[max_key]	#find the 1st, 2nd, and 3rd biggest
+	new_dict[max_key] = max_number
+print new_dict
+
+
+# alpha_out = letter_histogram("Hello")
+# print alpha_out
+# sorted_alpha = [(let,num) for num,let in sorted(
+# 	[(num,let) for let,num in alpha_out.items()], reverse=True
+# 	)
+# ]
+# print sorted_alpha[0:3]
 
 #Dictionary with letter as the key and letter_count as the object
 #Find the three highest letter counts
