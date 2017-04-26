@@ -1,0 +1,28 @@
+Class = blueprint (e.g. idea of a house)
+	Object = thing out of the blueprint (e.g. actual house from blueprint)
+		Attributes = data
+			-Can be overwritten or added to
+		Methods = action
+
+Encapsulation: Methods related to an object should be bundled with the data.
+This makes the object portable.
+
+-Classes are capitalized
+
+Class Car()
+	public mpg = 40		This is the public mpg, so class mpg is 40
+myCar = Car()			Car() is the class
+print myCar.mpg			myCar is the Object and .mpg is the Arribute
+myCar.mpg = 60			This will change the mpg for the Object only
+
+Class Car()
+	private maxMPH = 40	Nobody can change maxMPH outside of the class
+	def changeMPH(newMPH):
+		self.maxMPH = newMPH	self is the object that is calling the class
+myCar.maxMPH = 180		THIS WILL NOT WORK -- private variable in class
+myCar = Car()
+	myCar.changeMPH(180)
+sistersCar = Car()
+sistersCar = changeMPH(100)
+
+
