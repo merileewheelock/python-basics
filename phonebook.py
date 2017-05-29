@@ -36,7 +36,7 @@ while 1:	#This always means while True; end by adding break
 	#raw_imput comes in as a string, the response will be a number
 	try:
 		convert_user = int(user_input)
-	except ValueError:
+	except ValueError:	#Try and Except always go together
 		print "You must enter a number!\n" #This will force a return carriage
 		os.system("clear") #This will pass any Linux command you want
 	else:
